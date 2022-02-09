@@ -48,9 +48,9 @@ ul>li:hover a {
 		<ul>
 			<li><a href="">제픔조회</a></li>
 			<li><a href="">작업지시서조회</a></li>
-			<li><a href="">작업공정등록</a></li>
-			<li><a href="">작업공정조회</a></li>
-			<li><a href="">홈으로</a></li>
+			<li><a href="/test/website/view/board/boardregist.jsp">작업공정등록</a></li>
+			<li><a href="/test/website/view/board/boardlist.jsp">작업공정조회</a></li>
+			<li><a href="/test/website/view/main.jsp">홈으로</a></li>
 		</ul>
 	</nav>
 </body>

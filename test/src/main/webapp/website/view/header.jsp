@@ -23,5 +23,10 @@
 			<h2>(과정평가형 정보처리산업기사)스마트공장 공정관리 프로그램 ver2022-02</h2>
 		</div>
 	</header>
+
+	<!-- jquery[ ajax 필수 ] -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<!-- 본인 js 호출 -->
+	<script src="/test/website/js/main.js"></script>
 </body>
 </html>
