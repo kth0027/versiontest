@@ -8,8 +8,8 @@
 <style>
 #header {
 	background-color: rgb(213, 255, 255);
-	height: 5vh;
-	line-height: 5vh;
+	height: 10vh;
+	line-height: 10vh;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;

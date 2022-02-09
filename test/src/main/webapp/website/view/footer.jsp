@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 <style>
 footer {
-	height: 5vh;
-	line-height: 5vh;
+	height: 10vh;
+	line-height: 10vh;
 	text-align: center;
 	background-color: rgb(213, 255, 255);
 }

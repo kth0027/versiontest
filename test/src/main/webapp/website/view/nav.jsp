@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 <style>
 nav {
-	height: 5vh;
-	line-height: 5vh;
+	height: 10vh;
+	line-height: 10vh;
 	background-color: blue;
 	color: white;
 }
