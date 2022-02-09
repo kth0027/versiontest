@@ -47,12 +47,15 @@ h2 {
 }
 
 .list {
-	width: 80%;
+	width: 100%;
 }
 
 table {
 	display: flex;
 	justify-content: space-evenly;
+}
+
+tbody {
 	border: solid 2px black;
 }
 
@@ -80,6 +83,7 @@ tr, th, td {
 
 				<div class="list">
 					<table>
+						<tbody>
 						<tr>
 							<th>번호</th>
 							<th>작업지시번호</th>
@@ -117,6 +121,7 @@ tr, th, td {
 						<%
 						}
 						%>
+						</tbody>
 					</table>
 				</div>
 			</div>
