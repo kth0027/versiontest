@@ -37,7 +37,6 @@ height: 71vh;
 			<p>현장 중심형 인재육성을 지원합니다.</p>
 		</div>
 	</div>
-	<!-- <%@include file="content.jsp"%> -->
 	<%@include file="footer.jsp"%>
 
 </body>

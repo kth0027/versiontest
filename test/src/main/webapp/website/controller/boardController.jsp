@@ -15,7 +15,7 @@ request.setCharacterEncoding("utf-8"); // 요청시[request] 한글 인코딩
 
 MultipartRequest multi = new MultipartRequest(request, folderpath, 1024 * 1024, "UTF-8", new DefaultFileRenamePolicy());
 
-int pnum = Integer.parseInt(request.getParameter("pnum"));
+/* int pnum = Integer.parseInt(request.getParameter("pnum")); */
 //request > multi 전환
 
 String productnumber = multi.getParameter("productnumber");
@@ -34,8 +34,17 @@ String productsuccessday = multi.getParameter("productsuccessday");
 // 객체화
 Board board = new Board (productnumber ,productcode , productname , productmaterial , productprint, productcoting, producthabji, productjubhab , productwarp, productworkday,  productsuccessday );
 // DB처리
-BoardDao.getboarddao().boardwrite(board);
+/* BoardDao.getboarddao().boardwrite(board);
 
-response.sendRedirect("../view/board/boardlist.jsp");
+response.sendRedirect("../view/board/boardlist.jsp"); */
+boolean result=BoardDao.getboarddao().boardwrite(board);
+
+if(result){
+	out.print("<script>alert('공정이 등록 되었습니다.');</script>");
+	response.sendRedirect("../view/board/boardlist.jsp");
+} else {
+	out.print("<script>alert('공정이 등록 실패하였습니다.');</script>");
+	response.sendRedirect("../view/board/boardregist.jsp");
+}
 %>
 

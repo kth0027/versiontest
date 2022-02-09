@@ -16,8 +16,11 @@
 	padding: 0;
 }
 
+h2 {
+text-align: center;
+}
 #boardlist {
-	height: 71vh;
+	height: 75vh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -25,7 +28,6 @@
 
 .list {
 	width: 80%;
-	border: solid 1px #555;
 }
 
 table {
@@ -42,9 +44,10 @@ tr, th, td {
 </style>
 </head>
 <body>
+
 	<%
-	int pnum = Integer.parseInt(request.getParameter("pnum"));
-	ArrayList<Board> boards = BoardDao.getboarddao().boardlist(pnum);
+/* 	int pnum = Integer.parseInt(request.getParameter("pnum")); */
+	ArrayList<Board> boards = BoardDao.getboarddao().boardlist();
 	%>
 
 	<%@include file="../header.jsp"%>

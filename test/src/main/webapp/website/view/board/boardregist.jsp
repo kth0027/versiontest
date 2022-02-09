@@ -11,8 +11,26 @@
 	padd작업중: 0;
 }
 
+h2 {
+text-align: center;}
+
 #boardregister {
-	height: 71vh;
+	height: 75vh;
+}
+
+.add {
+display: flex;
+justify-content: center;
+}
+
+form {
+border: 1px solid black;
+width : 80%;
+}
+
+form div {
+margin : 10px 0;
+padding : 10px;
 }
 </style>
 </head>

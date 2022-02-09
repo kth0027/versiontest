@@ -58,34 +58,16 @@ public class BoardDao {
 
 	}
 
-	// 게시물번호의 해당 게시물 가져오기
-	public Board getboard(int pnum) {
-		String sql = "select * from board where pnum=?";
-		try {
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, pnum);
-			rs = ps.executeQuery();
-			if (rs.next()) {
-				Board board = new Board(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9),
-						rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13));
-				return board;
-			}
-		} catch (Exception e) {
-		}
-		return null;
-	}
 
 	// 모든 게시물 출력
-	public ArrayList<Board> boardlist(int pnum) {
+	public ArrayList<Board> boardlist() {
 
 		ArrayList<Board> boards = new ArrayList<Board>();
-		String sql = null;
+		String sql ="select * from board";
 
 		try {
 //				String sql = "select * from reply where pnum=" + pnum;
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, pnum);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 
@@ -95,9 +77,26 @@ public class BoardDao {
 				boards.add(board);
 			}
 			return boards;
-		} catch (Exception e) {
-		}
+		} catch (Exception e) {System.out.println("제품 리스트 전체 조회 오류 "+e);}
 		return null;
 	}
+	
+//	// 게시물번호의 해당 게시물 가져오기
+//	public Board getboard(int pnum) {
+//		String sql = "select * from board where pnum=?";
+//		try {
+//			ps = con.prepareStatement(sql);
+//			ps.setInt(1, pnum);
+//			rs = ps.executeQuery();
+//			if (rs.next()) {
+//				Board board = new Board(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
+//						rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9),
+//						rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13));
+//				return board;
+//			}
+//		} catch (Exception e) {
+//		}
+//		return null;
+//	}
 
 }
