@@ -38,7 +38,6 @@ h2 {
 .add {
 	display: flex;
 	justify-content: center;
-	border: 1px solid black;
 }
 
 form {
@@ -47,7 +46,7 @@ form {
 }
 
 form div {
-	margin: 10px 0;
+	margin: 5px 0;
 	padding: 10px;
 }
 </style>
@@ -140,7 +139,7 @@ form div {
 			</div>
 		</main>
 		<footer>
-			<%@include file="../footer.jsp"%>'
+			<%@include file="../footer.jsp"%>
 		</footer>
 	</div>
 
