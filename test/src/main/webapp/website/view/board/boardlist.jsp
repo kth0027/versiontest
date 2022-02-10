@@ -63,13 +63,14 @@ tr, th, td {
 	margin: 10px;
 	border: solid 1px grey;
 	border-style: double;
+	text-align: center;
 }
 </style>
 </head>
 <body>
 	<div id="wrap">
 		<%
-		/* 	int pnum = Integer.parseInt(request.getParameter("pnum")); */
+
 		ArrayList<Board> boards = BoardDao.getboarddao().boardlist();
 		%>
 		<header>
@@ -85,11 +86,8 @@ tr, th, td {
 					<table>
 						<tbody>
 						<tr>
-							<th>번호</th>
 							<th>작업지시번호</th>
-							<th>제품코드</th>
-							<th>제품명</th>
-							<th>준비완료</th>
+							<th>준비</th>
 							<th>인쇄</th>
 							<th>코팅</th>
 							<th>합지</th>
@@ -97,7 +95,6 @@ tr, th, td {
 							<th>포장</th>
 							<th>최종공정 일자</th>
 							<th>최종공정 시간</th>
-							<th>작성일</th>
 						</tr>
 						<%
 						for (Board board : boards) {
@@ -105,18 +102,68 @@ tr, th, td {
 
 						<tr>
 							<td><%=board.getPnum()%></td>
-							<td><%=board.getProductnumber()%></td>
-							<td><%=board.getProductcode()%></td>
-							<td><%=board.getProductname()%></td>
-							<td><%=board.getProductmaterial()%></td>
-							<td><%=board.getProductprint()%></td>
-							<td><%=board.getProductcoting()%></td>
-							<td><%=board.getProducthabji()%></td>
-							<td><%=board.getProductjubhab()%></td>
-							<td><%=board.getProductwarp()%></td>
-							<td><%=board.getProductworkday()%></td>
-							<td><%=board.getProductsuccessday()%></td>
-							<td><%=board.getProductdate()%></td>
+							
+							
+							<% if( board.getProductmaterial().equals("작업중") ){ %>
+								<td> - </td>
+							<%}else{ %>
+								<td><%=board.getProductmaterial()%></td>
+							<%} %>
+							
+							
+							<% if( board.getProductprint().equals("작업중") ){ %>
+								<td> - </td>
+							<%}else{ %>
+								<td><%=board.getProductprint()%></td>
+							<%} %>
+							
+							
+							<% if( board.getProductcoting().equals("작업중") ){ %>
+								<td> - </td>
+							<%}else{ %>
+								<td><%=board.getProductcoting()%></td>
+							<%} %>
+							
+								
+
+						
+							<% if( board.getProductjubhab().equals("작업중") ){ %>
+								<td> - </td>
+							<%}else{ %>
+								<td><%=board.getProductjubhab()%></td>
+							<%} %>
+							
+							
+							<% if( board.getProducthabji().equals("작업중") ){ %>
+								<td> - </td>
+							<%}else{ %>
+								<td><%=board.getProducthabji()%></td>
+							<%} %>
+							
+							
+							<% if( board.getProductwarp().equals("작업중") ){ %>
+								<td> - </td>
+							<%}else{ %>
+								<td><%=board.getProductwarp()%></td>
+							<%} %>
+							
+							
+							<%
+								// 2019001  -> 2019-01-01
+								// 문자열에 문자 삽입
+								StringBuffer buffer = new StringBuffer( board.getProductworkday() );
+								buffer.insert( 4 , "-" );
+								buffer.insert( 7 , "-" );
+								
+								// 1300 -> 13:00
+								StringBuffer buffer2 = new StringBuffer( board.getProductsuccessday() );
+								buffer2.insert( 2 , ":" );
+								
+							%>
+							
+							
+							<td><%= buffer.toString() %></td>
+							<td><%= buffer2.toString() %></td>
 						</tr>
 						<%
 						}

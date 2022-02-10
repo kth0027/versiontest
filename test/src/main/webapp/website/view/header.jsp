@@ -24,8 +24,6 @@
 		</div>
 	</header>
 
-	<!-- jquery[ ajax 필수 ] -->
-	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<!-- 본인 js 호출 -->
 	<script src="/test/website/js/main.js"></script>
 </body>
